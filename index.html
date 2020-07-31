@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>משדרג קישורי דרייב</title>
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <link href='https://fonts.googleapis.com/css?family=Assistant' rel='stylesheet'>
+<style>
+body {
+    font-family: 'Assistant';font-size: 22px;
+}
+</style>
+</head>
+
+<body>
+
+	<div class="colorlib-loader"></div>
+
+	<div id="page">
+		<nav class="colorlib-nav" role="navigation">
+			<div class="top-menu">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-2">
+							<a href="https://mitmachim.top/user/chv" target="_blank"><img src="portait.jpg" alt="avatar"
+									style="border-radius: 50%; width: 50px; height: 50px; margin-top: 35px;" /></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<section id="home" class="video-hero"
+			style="height: 700px; background-image: url(back.jpg);  background-size:cover; background-position: center center;background-attachment:fixed;"
+			data-section="home">
+			<div class="display-t text-center">
+				<div class="display-tc">
+					<input id="cb" type="text" hidden>
+					<h2>הכנס כאן קישור דרייב</h2>
+					<p>אנחנו ניצור ממנו קישור להורדה מיידית</p>
+					<input type="text" id="searchTxt" placeholder=" הדבק את קישור הדרייב כאן" />
+					<script>
+						function copy() {
+							var txt = document.getElementById("searchTxt").value;
+							console.log(txt);
+							var splitted = txt.split(/\/file\/d\/([^\/]+)/)[1];
+							$('#ex1').modal('open');
+							if (splitted == null) { $('#ex2').modal('open'); }
+							else {
+								const fixedlink = "https://www.googleapis.com/drive/v3/files/" + splitted + "?alt=media&key=AIzaSyDduW1Zbi2MIu8aMUMF6op72pJ1f0sPBi0";
+								console.log('the file ID is: ' + splitted);
+								console.log('fixed link is: ' + fixedlink);
+								navigator.clipboard.writeText(fixedlink);
+								$('#ex1').modal('open');
+							}
+						}
+					</script>
+						<div id="ex2" class="modal" dir="rtl">
+							<p>הדבק בבקשה קישור דרייב תקין!</p>
+							<a href="#" rel="modal:close">סגור</a>
+						  </div>
+					<div id="ex1" class="modal" dir="rtl" text-align="center">
+						<p>הקישור החדש שלך הועתק ללוח!</p>
+						<a href="#" rel="modal:close">סגור</a>
+					  </div>
+					<script>
+						var input = document.getElementById("searchTxt");
+						input.addEventListener("keyup", function (event) {
+							if (event.keyCode === 13) {
+								event.preventDefault();
+								document.getElementById("copbut").click();
+							}
+						}); 
+					</script>
+					<button class="button button4" onclick="copy()" id="copbut"> צור קישור </button>
+				</div>
+			</div>
+		</section>
+
+					<div class="col-md-12 text-center" dir="rtl">
+						<h4>נערך על ידי chv <a href="https://github.com/chaim-chv" target="_blank">(גיטהב)</a>. תמונת הרקע מאת <a href="https://pixabay.com/users/yamabon-11501053/" target="_blank">yamabon</a> בפיקסביי<br>
+להסבר על צורת הפעולה ועוד - כנסו לפוסט הזה ב<a href="https://mitmachim.top/post/" target="_blank">מתמחים.טופ</a></h4>
+					</div>
+
+		<!-- jQuery -->
+		<script src="js/jquery.min.js"></script>
+		<!-- Waypoints -->
+		<script src="js/jquery.waypoints.min.js"></script>
+		<!-- Main -->
+		<script src="js/main.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+</body>
+
+</html>
