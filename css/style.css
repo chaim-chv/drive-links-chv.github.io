@@ -13,8 +13,9 @@ body {
   input[type=text]{
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
-     border-radius: 20px;
+     border-radius: 8px;
      border: 1px solid #2d9fd9;
+     box-shadow: inset 1px 2px 8px rgba(0, 0, 0, 0.07);
      color: #a0d18c;
      width: 250px;
      height: 30px;
@@ -24,6 +25,7 @@ body {
 input[type=text]:focus {
      outline: none;
      border: 1px solid #a0d18c;
+     box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.01), 0px 0px 8px rgba(0, 0, 0, 0.2);
      color: #2d9fd9;
 }
 
@@ -39,7 +41,8 @@ input[type=text]:focus {
   margin: 4px 2px;
 }
 
-.button4 {border-radius: 20px;}
+.button4 {border-radius: 8px;
+  box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.01), 0px 0px 8px rgba(0, 0, 0, 0.2);}
 
 #page {
   position: relative;
