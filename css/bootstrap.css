@@ -928,6 +928,8 @@ pre code {
 
 .col-md-12 {
   text-align: center;
+  background-color: #FFFFFF;
+  position:fixed;
   bottom:0;
   width:100%;
   z-index:100;
