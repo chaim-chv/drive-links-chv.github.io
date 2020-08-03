@@ -927,7 +927,11 @@ pre code {
 }
 
 .col-md-12 {
- position: relative;
+  text-align: center;
+  position:fixed;
+  bottom:0;
+  width:100%;
+  z-index:100;
 }
 
 
