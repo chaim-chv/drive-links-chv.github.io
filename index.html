@@ -52,7 +52,8 @@ body {
 							$('#ex1').modal('open');
 							if (splitted == null) { $('#ex2').modal('open'); }
 							else {
-								const fixedlink = "https://www.googleapis.com/drive/v3/files/" + splitted + "?alt=media&key=AIzaSyDduW1Zbi2MIu8aMUMF6op72pJ1f0sPBi0";
+								// const fixedlink = "https://www.googleapis.com/drive/v3/files/" + splitted + "?alt=media&key=AIzaSyDduW1Zbi2MIu8aMUMF6op72pJ1f0sPBi0";
+								const fixedlink = "https://drive.google.com/u/0/uc?export=download&confirm=63sh&id=" + splitted;
 								console.log('the file ID is: ' + splitted);
 								console.log('fixed link is: ' + fixedlink);
 								navigator.clipboard.writeText(fixedlink);
@@ -95,5 +96,4 @@ body {
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 
 </body>
-
 </html>
