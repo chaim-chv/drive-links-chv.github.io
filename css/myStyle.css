@@ -1,0 +1,33 @@
+/* import google fonts Arimo */
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap');
+
+/* blur background when showing sweetAlert - https://sweetalert2.github.io/recipe-gallery/blurred-backdrop.html */
+body.swal2-shown > [aria-hidden="true"] {
+  filter: blur(10px);
+}
+body > * {
+  transition: 0.1s filter linear;
+}
+
+/* font */
+body, button, input {
+  font-family: Arimo;
+}
+
+/* color of title & subtitle + some shade */
+.cont {
+  color: #ffffff !important;
+  text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
+}
+
+/* background image */
+.has-bg-img {
+  background: url("../img/background.jpg") center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* rounded icons - profile & drive icon */
+img {
+  border-radius: 100%;
+}

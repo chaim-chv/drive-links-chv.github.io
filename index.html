@@ -1,98 +1,55 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>שדרוג קישורי דרייב</title>
+    <link rel="icon" type="image/png" href="img/drive.png" />
+    <link rel="stylesheet" href="css/bulma.css" />
+    <link rel="stylesheet" href="css/myStyle.css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/sweetAlert.js"></script>
+  </head>
+  <body>
+    <section class="hero is-fullheight has-bg-img">
+      <div class="section">
+        <nav class="navbar">
+          <div class="navbar-brand">
+            <div class="navbar-brand">
+              <a href="https://mitmachim.top/user/chv" target="_blank"><img class="image is-64x64" src="img/chv.png" alt="avatar" title="chv" /></a>
+            </div>
+          </div>
+          <div class="navbar-start">
+            <div class="navbar-brand">
+              <a href="https://drive.google.com" target="_blank"><img class="image is-64x64" src="img/drive-regular.png" alt="drive" title="למעבר לדרייב" /></a>
+            </div>
+          </div>
+        </nav>
+      </div>
 
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>משדרג קישורי דרייב</title>
-	<link rel="stylesheet" href="css/animate.css">
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-    <link href='https://fonts.googleapis.com/css?family=Assistant' rel='stylesheet'>
-<style>
-body {
-    font-family: 'Assistant';font-size: 22px;
-}
-</style>
-</head>
+      <div class="container has-text-centered">
+        <h2 class="title cont">הכנס כאן קישור דרייב</h2>
+        <p class="subtitle cont">אנחנו ניצור ממנו קישור להורדה מיידית</p>
+        <div class="columns">
+          <div class="column is-four-fifths">
+            <input class="input is-large is-primary" type="text" id="searchTxt" placeholder="הדבק את קישור הדרייב כאן" />
+          </div>
+          <div class="column">
+            <button class="button is-large is-primary" id="copbut">צור קישור</button>
+          </div>
+        </div>
+      </div>
 
-<body>
-	
-	<div class="colorlib-loader"></div>
+      <div class="hero-foot">
+        <footer class="footer">
+          <div>
+            <h4>נערך על ידי <a href="https://github.com/chaim-chv" target="_blank">chv</a> | תמונת הרקע מאת <a href="https://pixabay.com/users/yamabon-11501053/" target="_blank">yamabon</a> בפיקסביי | להסבר על צורת הפעולה ועוד - כנסו לפוסט <a href="https://mitmachim.top/post/134523" target="_blank">הזה</a> במתמחים.טופ</h4>
+          </div>
+        </footer>
+      </div>
+    </section>
 
-	<div id="page">
-		<nav class="colorlib-nav" role="navigation">
-			<div class="top-menu">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-2">
-							<a href="https://mitmachim.top/user/chv" target="_blank"><img src="portait.jpg" alt="avatar"
-									style="border-radius: 50%; width: 50px; height: 50px; margin-top: 35px;" /></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</nav>
-
-		<section id="home" class="video-hero"
-			style="height: 700px; background-image: url(back.jpg);  background-size:cover; background-position: center center;background-attachment:fixed;"
-			data-section="home">
-			<div class="display-t text-center">
-				<div class="display-tc">
-					<input id="cb" type="text" hidden>
-					<h2 style="text-shadow: 2px 3px 5px rgba(0,0,0,0.5);">הכנס כאן קישור דרייב</h2>
-					<p style="text-shadow: 2px 3px 5px rgba(0,0,0,0.5);">אנחנו ניצור ממנו קישור להורדה מיידית</p>
-					<input type="text" id="searchTxt" placeholder=" הדבק את קישור הדרייב כאן" />
-					<script>
-						function copy() {
-							var txt = document.getElementById("searchTxt").value;
-							console.log(txt);
-							var splitted = txt.split(/\/file\/d\/([^\/]+)/)[1];
-							$('#ex1').modal('open');
-							if (splitted == null) { $('#ex2').modal('open'); }
-							else {
-								const fixedlink = "https://www.googleapis.com/drive/v3/files/" + splitted + "?alt=media&key=AIzaSyDduW1Zbi2MIu8aMUMF6op72pJ1f0sPBi0";
-								console.log('the file ID is: ' + splitted);
-								console.log('fixed link is: ' + fixedlink);
-								navigator.clipboard.writeText(fixedlink);
-								$('#ex1').modal('open');
-							}
-						}
-					</script>
-						<div id="ex2" class="modal" dir="rtl">
-							<p>הדבק בבקשה קישור דרייב תקין! <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="padding-top: 10px;" width="30" height="30"><path d="M8 10.5V10H7v.5h1zm-1 .01v.5h1v-.5H7zM7 4v4h1V4H7zm0 6.5v.01h1v-.01H7zm.5 3.5A6.5 6.5 0 011 7.5H0A7.5 7.5 0 007.5 15v-1zM14 7.5A6.5 6.5 0 017.5 14v1A7.5 7.5 0 0015 7.5h-1zM7.5 1A6.5 6.5 0 0114 7.5h1A7.5 7.5 0 007.5 0v1zm0-1A7.5 7.5 0 000 7.5h1A6.5 6.5 0 017.5 1V0z" fill="currentColor"></path></svg></p>
-							<a href="#" rel="modal:close">סגור</a>
-						  </div>
-					<div id="ex1" class="modal" dir="rtl" text-align="center">
-						<p>הקישור החדש שלך הועתק ללוח! <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="padding-top: 10px;" width="30" height="30"><path d="M11 1.5h2.5v12a1 1 0 01-1 1h-10a1 1 0 01-1-1v-12H4m1 7l2 2 3.5-4m-6-6h6v2a1 1 0 01-1 1h-4a1 1 0 01-1-1v-2z" stroke="currentColor"></path></svg></p>
-						<a href="#" rel="modal:close">סגור</a>
-					  </div>
-					<script>
-						var input = document.getElementById("searchTxt");
-						input.addEventListener("keyup", function (event) {
-							if (event.keyCode === 13) {
-								event.preventDefault();
-								document.getElementById("copbut").click();
-							}
-						}); 
-					</script>
-					<button class="button button4" onclick="copy()" id="copbut"> צור קישור </button>
-				</div>
-			</div>
-		</section>
-
-					<div class="col-md-12 text-center" dir="rtl">
-						<h4>נערך על ידי chv <a href="https://github.com/chaim-chv" target="_blank">(גיטהב)</a> | תמונת הרקע מאת <a href="https://pixabay.com/users/yamabon-11501053/" target="_blank">yamabon</a> בפיקסביי | להסבר על צורת הפעולה ועוד - כנסו לפוסט <a href="https://mitmachim.top/post/134523" target="_blank">הזה</a> במתמחים.טופ</h4>
-					</div>
-
-		<!-- jQuery -->
-		<script src="js/jquery.min.js"></script>
-		<!-- Waypoints -->
-		<script src="js/jquery.waypoints.min.js"></script>
-		<!-- Main -->
-		<script src="js/main.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-
-</body>
+    <script src="js/main.js"></script>
+  </body>
 </html>
